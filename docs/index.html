@@ -1,0 +1,296 @@
+<!DOCTYPE html>
+<html lang="">
+    <head>
+	<meta charset="UTF-8" />
+	<title>Viola Real Estate</title>
+	<meta name="viewport" content="width=device-width,initial-scale=1" />
+	<meta name="description" content="" />
+	<link rel="icon" href="favicon.png">
+	<link rel="stylesheet" href="https://unpkg.com/leaflet@1.9.4/dist/leaflet.css"
+	      integrity="sha256-p4NxAoJBhIIN+hmNHrzRCf9tD/miZyoHS5obTRR9BMY="
+	      crossorigin=""/>
+	<link rel="stylesheet" href="css/vendor/spectre.min.css">
+	<link rel="stylesheet" href="css/vendor/spectre-exp.min.css">
+	<link rel="stylesheet" href="css/vendor/spectre-icons.min.css">
+	<script src="https://unpkg.com/leaflet@1.9.4/dist/leaflet.js"
+		integrity="sha256-20nQCchB9co0qIjJZRGuk2/Z9VM+kNiyxNV1lvTlZBo="
+		crossorigin=""></script>
+	<style>
+	 .btn, .btn:hover{
+	     color: #338BA8;
+	     border-color: #338BA8;
+	 }
+
+	 .btn:active, .btn:focus{
+	     border-color: #338BA8;
+	     background: #338BA8;
+	     color: #ffffff;
+	 }
+
+	 #LOGO{
+	     width: 150px;
+	 }
+
+	 #MOBILE_HERO{
+	     background-image: url("img/mobile-cover.png");
+	     height: 300px;
+	 }
+
+	 #ACTION{
+	     background-color: #ffffff;
+	     border-radius: 5px;
+	     border-color: #ffffff;
+	     position: relative;
+	     top: 180px;
+	     width: 100%;
+	     color: #338BA8;
+	 }
+
+	 #ICONS{
+	     margin-top: -40px;
+	 }
+
+	 .iconsContainers{
+	     background-color: #338BA8;
+	     text-align: center;
+	     padding: 5px;
+	 }
+
+	 .iconsContainers img{
+	     width: 50px;
+	 }
+
+	 h6{
+	     color: #ffffff;
+	     font-size: 16px;
+	 }
+
+	 #ABOUT_CONTAINER{
+	     padding: 0 20px;
+	 }
+
+	 
+	 #ABOUT{
+	     background: #338BA8;
+	     background-image: url("img/hs.jpg");
+	     background-size: 100% 100%;
+	     margin: 10px 0;
+	     padding-top: 45px;
+	     min-height: 300px;
+	 }
+
+	 #ABOUT p{
+	     color: #ffffff;
+	     text-shadow: 1px 1px 1px #262626;
+	     font-size: 20px;
+	     background-color: rgba(51, 139, 168, 0.39);
+	     padding: 5px;
+	 }
+
+	 #ITINERARY{
+	     padding: 0 10px;
+	     margin-bottom: 1em;
+	 }
+
+	 #ITINERARY li{
+	     font-size: 12px;
+	     margin: 0;
+	 }
+
+	 .days{
+	     padding-top: 100px;
+	 }
+
+	 #DAY1, #DAY2, #DAY3, #DAY4{
+	     background-image: url("img/h1.jpg") !important;
+	     color: #ffffff !important;
+	     text-shadow: 1px 1px 1px #000000;
+	     background-size: 100% 100% !important;
+	 }
+
+	 #DAY2{
+	     background-image: url("img/h2.jpg") !important;
+	 }
+
+	 #DAY3{
+	     background-image: url("img/h3.jpg") !important;
+	 }
+
+	 #DAY4{
+	     background-image: url("img/h4.jpg") !important;
+	 }
+
+	 .carousel .carousel-locator:nth-of-type(1):checked ~ .carousel-nav .nav-item:nth-of-type(1), .carousel .carousel-locator:nth-of-type(2):checked ~ .carousel-nav .nav-item:nth-of-type(2), .carousel .carousel-locator:nth-of-type(3):checked ~ .carousel-nav .nav-item:nth-of-type(3), .carousel .carousel-locator:nth-of-type(4):checked ~ .carousel-nav .nav-item:nth-of-type(4), .carousel .carousel-locator:nth-of-type(5):checked ~ .carousel-nav .nav-item:nth-of-type(5), .carousel .carousel-locator:nth-of-type(6):checked ~ .carousel-nav .nav-item:nth-of-type(6), .carousel .carousel-locator:nth-of-type(7):checked ~ .carousel-nav .nav-item:nth-of-type(7), .carousel .carousel-locator:nth-of-type(8):checked ~ .carousel-nav .nav-item:nth-of-type(8) {
+	     color: #338BA8;
+	 }
+	</style>
+    </head>
+
+    <body>
+	<div class="container" id="MOBILE">
+	    <div class="columns">
+		<div class="column col-12">
+		    <header class="navbar">
+			<section class="navbar-section">
+			    <!-- dropdown button group -->
+			    <div class="dropdown">
+				<div class="btn-group">
+				    <a href="#" class="btn dropdown-toggle" tabindex="0">
+					<i class="icon icon-menu"></i>
+				    </a>
+
+				    <!-- menu component -->
+				    <ul class="menu">
+					<li class="menu-item">
+					    <a href="#">
+						About
+					    </a>
+					</li>
+					<li class="menu-item">
+					    <a href="#">
+						Itinerary
+					    </a>
+					</li>
+					<li class="menu-item">
+					    <a href="#">
+						Gallery
+					    </a>
+					</li>
+				    </ul>
+				</div>
+			    </div>
+			</section>
+			<section class="navbar-section">
+			    <img src="img/logo.png" id="LOGO">
+			</section>
+		    </header>
+		</div>
+		<div class="column col-12" id="MOBILE_HERO">
+		    <div class="column col-7">
+			<a class="btn" href="" id="ACTION">OUR PROPERTIES</a>
+		    </div>
+		</div>
+
+		<div class="container" id="ICONS">
+		    <div class="columns">
+			<div class="column col-3 col-mx-auto iconsContainers">
+			    <img src="img/icons/handshake.png">
+			    <h6>Integrity</h6>
+			</div>
+			<div class="column col-3 col-mx-auto iconsContainers">
+			    <img src="img/icons/contract.png">
+			    <h6>Local Expertise</h6>
+			</div>
+			<div class="column col-3 col-mx-auto iconsContainers">
+			    <img src="img/icons/accountability.png">
+			    <h6>Safety and Security</h6>
+			</div>
+		    </div>
+		</div>
+
+		<div class="container" id="ABOUT_CONTAINER">
+		    <div class="columns">
+			<div class="column col col-mx-auto" id="ABOUT">
+			    <p>
+				<b>
+				    At Viola Real Estate we are a
+				    dedicated team of real estate
+				    professionals committed to
+				    providing exceptional services for
+				    buyers, sellers, and investors.
+				</b>
+			    </p>
+			</div>
+		    </div>
+		</div>
+
+
+		<div class="container" id="ITINERARY">
+		    <div class="carousel">
+			<!-- carousel locator -->
+			<input class="carousel-locator" id="slide-1" type="radio" name="carousel-radio" hidden="" checked="">
+			<input class="carousel-locator" id="slide-2" type="radio" name="carousel-radio" hidden="">
+			<input class="carousel-locator" id="slide-3" type="radio" name="carousel-radio" hidden="">
+			<input class="carousel-locator" id="slide-4" type="radio" name="carousel-radio" hidden="">
+
+			<!-- carousel container -->
+			<div class="carousel-container">
+
+			    <div class="columns carousel-item">
+				<label class="item-prev btn btn-action btn-lg" for="slide-1"><i class="icon icon-arrow-left"></i></label>
+				<label class="item-next btn btn-action btn-lg" for="slide-3"><i class="icon icon-arrow-right"></i></label>
+				<div class="column  col-mx-auto itineraryCols" id="DAY2">
+				    <h3>Residential House</h3>
+				    </h5>Katutura</h5>
+				</div>
+			    </div>
+
+			    <div class="columns carousel-item">
+				<label class="item-prev btn btn-action btn-lg" for="slide-4"><i class="icon icon-arrow-left"></i></label>
+				<label class="item-next btn btn-action btn-lg" for="slide-2"><i class="icon icon-arrow-right"></i></label>
+				<div class="column  col-mx-auto itineraryCols" id="DAY1">
+				    <h3>Day 02</h3>
+				    </h5>Swakopmund</h5>
+				</div>
+			    </div>
+
+			    <div class="columns carousel-item">
+				<label class="item-prev btn btn-action btn-lg" for="slide-4"><i class="icon icon-arrow-left"></i></label>
+				<label class="item-next btn btn-action btn-lg" for="slide-2"><i class="icon icon-arrow-right"></i></label>
+				<div class="column  col-mx-auto itineraryCols" id="DAY3">
+				    <h3>Residential House</h3>
+				    </h5>Kuisebmund</h5>
+				</div>
+			    </div>
+
+			    <div class="columns carousel-item">
+				<label class="item-prev btn btn-action btn-lg" for="slide-4"><i class="icon icon-arrow-left"></i></label>
+				<label class="item-next btn btn-action btn-lg" for="slide-2"><i class="icon icon-arrow-right"></i></label>
+				<div class="column  col-mx-auto itineraryCols" id="DAY4">
+				    <h3>Office Space</h3>
+				    </h5>Windhoek</h5>
+				</div>
+			    </div>
+
+			</div>
+			<!-- carousel navigation -->
+			<div class="carousel-nav">
+			    <label class="nav-item text-hide c-hand" for="slide-1">1</label>
+			    <label class="nav-item text-hide c-hand" for="slide-2">2</label>
+			    <label class="nav-item text-hide c-hand" for="slide-3">3</label>
+			    <label class="nav-item text-hide c-hand" for="slide-4">4</label>
+			</div>
+		    </div>
+		</div>
+
+		<div class="container">
+		    <div class="columns">
+			<div class="column col">
+			    <a href="https://www.instagram.com/">
+				<img src="img/icons/instagram.png">
+			    </a><br>
+			</div>
+
+			<div class="column col">
+			    <a href="https://www.youtube.com/">
+				<img src="img/icons/youtube.png">
+			    </a>
+			</div>
+
+			<div class="column col">
+			    <a href="tel:+264817641188">
+				<img src="img/icons/telephone.png">
+			    </a>
+			</div>
+
+			<div class="column col">
+			    <a href="mailto:info@viola-estates.com">
+				<img src="img/icons/email.png">
+			    </a>
+			</div>
+		    </div>
+		</div>
+	    </div>
+	</div>
+    </body>
+</html>
