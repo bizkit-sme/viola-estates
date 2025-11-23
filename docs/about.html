@@ -2,7 +2,7 @@
 <html lang="">
     <head>
 	<meta charset="UTF-8" />
-	<title>Viola Real Estate</title>
+	<title>About | Viola Real Estate</title>
 	<meta name="viewport" content="width=device-width,initial-scale=1" />
 
 	<!--===================== General OG data =========================-->
@@ -61,13 +61,11 @@
 	 }
 
 	 #HERO{
-	     background-image: url("img/cover.png");
+	     background-image: url("img/h3.jpg");
 	     background-size: 100%;
 	     background-repeat: no-repeat;
 	     color: #FFFFFF;
 	     text-shadow: 1px 1px 1px #000000;
-	     max-height: 300px;
-	     min-height: 300px;
 	 }
 
 	 .hero-body{
@@ -82,53 +80,6 @@
 	     background: #ffffff;
 	 }
 
-	 #ACTION{
-	     background-color: #ddcb0c;;
-	     border-radius: 5px;
-	     border-color: #ddcb0c;;
-	     position: relative;
-	     top: 300px;
-	     width: 100%;
-	     color: #ffffff;
-	     text-shadow: 1px 1px 1px #000000;
-	     left: 110px;
-	 }
-
-	 .iconsContainers{
-	     background-color: rgba(19, 55, 119, 0.81);
-	     border: 3px solid #dccb17;
-	     text-align: center;
-	     padding: 5px;
-	     margin-top: -30px;
-	 }
-
-	 .iconsContainers img{
-	     width: 28px;
-	 }
-
-	 h6{
-	     color: #ffffff;
-	     font-size: 16px;
-	 }
-
-	 #ABOUT_CONTAINER{
-	     margin-top: 0;
-	     margin-bottom: 0;
-	     padding: 2em 5px;
-	     background-image: url("img/house.jpg");
-	     background-size: 100% 100%;
-	 }
-
-	 #ABOUT{
-	     background: rgba(19, 55, 119, 0.5);
-	     margin-bottom: 0;
-	     color: #ffffff;
-	     padding: 10px;
-	     padding-top: 2em;
-	     font-size: 20px;
-	     text-shadow: 1px 1px 1px #000000;
-	 }
-
 	 .container{
 	     background-color: #ffffff;
 	 }
@@ -139,16 +90,15 @@
 	 }
 
 	 #bookings{
-	     color: #254678;
+	     color: #9b532a;
 	     padding-bottom: 1em;
-	     padding-top: 1em;
 	 }
 
 	 #bookings img{
 	     border: thin solid #ddcb0c;
 	 }
 
-	 #bookings p {
+	 #bookings p, #ABOUT {
 	     color: #747474;
 	     margin-top: 1em;
 	 }
@@ -178,29 +128,15 @@
 	 @media only screen and (max-width: 500px) {
 	     #MOBILE_HERO{
 		 background-size: 90%;
-		 background-image: url("img/mobile-cover.jpg");
+		 background-image: url("img/h2.jpg");
 		 height: 270px;
 		 display: block;
 		 background-repeat: no-repeat;
 		 background-position: center;
 	     }
 
-	     #ABOUT{
-		 min-height: 300px;
-		 padding-top: 0;
-	     }
-
 	     #HERO {
 		 display: none;
-	     }
-
-	     #ICONS{
-		 margin-top: -40px;
-	     }
-
-	     #ACTION{
-		 top: 160px;
-		 left: 20px;
 	     }
 	 }
 	</style>
@@ -222,12 +158,12 @@
 				    <!-- menu component -->
 				    <ul class="menu">
 					<li class="menu-item">
-					    <a href="index.html" style="color: #9b532a">
+					    <a href="index.html">
 						Home
 					    </a>
 					</li>
 					<li class="menu-item">
-					    <a href="about.html">
+					    <a href="about.html" style="color: #9b532a">
 						About Us
 					    </a>
 					</li>
@@ -251,47 +187,29 @@
 		    </header>
 		</div>
 
-		<div class="column col-8 col-mx-auto hero hero-lg" id="HERO">
+		<div class="column col-8 col-mx-auto hero" id="HERO">
 		    <div class="hero-body">
-			<h1>Properties Across <br>Namibia</h1>
+			<h1>About Us</h1>
 		    </div>
 		</div>
 
 		<div class="column col-12" id="MOBILE_HERO">
 		    <div class="column col-7">
-			<a class="btn" href="#bookings" id="ACTION">Contact Us</a>
+			<h1 style="color: #E2CA0E; text-shadow: 1px 1px 1px #000000">About Us</h1>
 		    </div>
 		</div>
 
-		<div class="container col-8 col-sm-12" id="ICONS">
-		    <div class="columns">
-			<div class="column col-2 col-sm-3 col-mx-auto iconsContainers">
-			    <img src="img/icons/handshake.png">
-			    <h6>Integrity</h6>
-			</div>
-			<div class="column col-2 col-sm-3 col-mx-auto iconsContainers">
-			    <img src="img/icons/contract.png">
-			    <h6>Local Expertise</h6>
-			</div>
-			<div class="column col-2 col-sm-3 col-mx-auto iconsContainers">
-			    <img src="img/icons/accountability.png">
-			    <h6>Security</h6>
-			</div>
-		    </div>
-		</div>
-
-		<div class="container col-8 col-sm-12" style="padding: 0 !important">
-		    <div class="columns" id="ABOUT_CONTAINER">
-			<p class="column col-8 col-sm-10 col-mx-auto" id="ABOUT">
-			    Welcome to <b>Viola Real Estate</b>.
-			    As your trusted local real estate experts,
-			    we are dedicated to helping you navigate
-			    the market in Namibia. Whether you're
-			    buying your first home, seeking an
-			    investment property, or ready to sell,
-			    we combine deep community knowledge with
-			    personalized service to achieve your
-			    goals. Let's find your perfect space.
+		<div class="container col-8 col-sm-12">
+		    <div class="columns" style="padding: 2em;">
+			<p class="column col-12 col-mx-auto" id="ABOUT">
+			    Welcome to <b>Viola Real Estate</b>. As your trusted
+			    local real estate experts, we are dedicated to
+			    helping you navigate the market in Namibia.
+			    Whether you're buying your first home,
+			    seeking an investment property, or ready
+			    to sell, we combine deep community
+			    knowledge with personalized service to
+			    achieve your goals. Let's find your perfect space.
 			</p>
 		    </div>
 		</div>
@@ -303,8 +221,6 @@
 				<div class="col-7 col-sm-12">
 				    <div class="form-group">
 					<div class="col-10 col-sm-12 col-mx-auto">
-					    <h4>Countless Possibilities</h4>
-					    <img class="col-12 col-mx-auto" src="img/h1.jpg">
 					    <div class="columns">
 						<img class="col-3 col-mx-auto" src="img/h2.jpg">
 						<img class="col-3 col-mx-auto" src="img/h3.jpg">
@@ -365,13 +281,13 @@
 			</div>
 
 			<div class="column col">
-			    <a href="tel:+264817641188">
+			    <a href="tel:+264816703242">
 				<img src="img/icons/phone.png">
 			    </a>
 			</div>
 
 			<div class="column col">
-			    <a href="mailto:info@viola-estates.space">
+			    <a href="mailto:bookings@uncharted-safaris.tours">
 				<img src="img/icons/email.png">
 			    </a>
 			</div>
@@ -390,7 +306,7 @@
 	 var map = L.map('map').setView([-22.629765282633596, 14.52656160190272], 9);
 
 	 L.tileLayer('https://tile.openstreetmap.org/{z}/{x}/{y}.png', {
-	     maxZoom: 5,
+	     maxZoom: 4,
 	     attribution: ''
 	 }).addTo(map);
 
